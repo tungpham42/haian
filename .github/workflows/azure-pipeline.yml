@@ -1,14 +1,46 @@
-name: CI/CD Pipeline
+name: CI/CD for File Changes
 
 on:
   push:
     branches:
-      - master
+      - master # Specify your branch
+  pull_request:
+    branches:
+      - master # Specify your branch
 
 jobs:
-  build:
+  detect-file-changes:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
+      - name: List changed files
+        run: |
+          echo "Files changed in this commit:"
+          git diff --name-status HEAD^ HEAD
+
+      - name: Check for specific changes
+        id: check_changes
+        run: |
+          CHANGED_FILES=$(git diff --name-status HEAD^ HEAD)
+          echo "$CHANGED_FILES"
+          echo "::set-output name=changed::${CHANGED_FILES}"
+
+      - name: Perform actions based on changes
+        run: |
+          if echo "${{ steps.check_changes.outputs.changed }}" | grep -q '^A'; then
+            echo "Files created."
+            # Add your logic here for newly created files
+          fi
+
+          if echo "${{ steps.check_changes.outputs.changed }}" | grep -q '^M'; then
+            echo "Files updated."
+            # Add your logic here for updated files
+          fi
+
+          if echo "${{ steps.check_changes.outputs.changed }}" | grep -q '^D'; then
+            echo "Files deleted."
+            # Add your logic here for deleted files
+          fi
