@@ -9,6 +9,8 @@
       const showInfo = () => {
         let y = 0;
 
+        const closeButton = document.querySelector("#close-button");
+
         const oneButton = document.querySelector("#one-button");
         const twoButton = document.querySelector("#two-button");
         const threeButton = document.querySelector("#three-button");
@@ -66,6 +68,7 @@
           portfolioOneFirst.setAttribute("visible", true);
           portfolioLeftButton.setAttribute("visible", true);
           portfolioRightButton.setAttribute("visible", true);
+          closeButton.setAttribute("visible", true);
           showPortfolioOne();
 
           portfolioTwo.setAttribute("visible", false);
@@ -84,6 +87,7 @@
           portfolioTwoFirst.setAttribute("visible", true);
           portfolioLeftButton.setAttribute("visible", true);
           portfolioRightButton.setAttribute("visible", true);
+          closeButton.setAttribute("visible", true);
           showPortfolioTwo();
 
           portfolioOne.setAttribute("visible", false);
@@ -102,6 +106,7 @@
           portfolioThreeFirst.setAttribute("visible", true);
           portfolioLeftButton.setAttribute("visible", true);
           portfolioRightButton.setAttribute("visible", true);
+          closeButton.setAttribute("visible", true);
           showPortfolioThree();
 
           portfolioOne.setAttribute("visible", false);
@@ -120,6 +125,7 @@
           portfolioFourFirst.setAttribute("visible", true);
           portfolioLeftButton.setAttribute("visible", true);
           portfolioRightButton.setAttribute("visible", true);
+          closeButton.setAttribute("visible", true);
           showPortfolioFour();
 
           portfolioOne.setAttribute("visible", false);
@@ -138,6 +144,7 @@
           portfolioFiveFirst.setAttribute("visible", true);
           portfolioLeftButton.setAttribute("visible", true);
           portfolioRightButton.setAttribute("visible", true);
+          closeButton.setAttribute("visible", true);
           showPortfolioFive();
 
           portfolioOne.setAttribute("visible", false);
@@ -166,12 +173,7 @@
         const portfolioRightButton = document.querySelector(
           "#portfolio-right-button"
         );
-        const portfolioNotLeftButton = document.querySelector(
-          ":not(#portfolio-left-button)"
-        );
-        const portfolioNotRightButton = document.querySelector(
-          ":not(#portfolio-right-button)"
-        );
+        const closeButton = document.querySelector("#close-button");
 
         portfolioOne.setAttribute("visible", true);
 
@@ -203,13 +205,8 @@
           }
           portfolioOne.setAttribute("position", "0 " + y + " -0.01");
         }, 10);
-        portfolioNotLeftButton.addEventListener("click", () => {
-          portfolioOneFirst.setAttribute("visible", false);
-          portfolioLeftButton.setAttribute("visible", false);
-          portfolioRightButton.setAttribute("visible", false);
-          portfolioOne.setAttribute("visible", false);
-        });
-        portfolioNotRightButton.addEventListener("click", () => {
+        closeButton.addEventListener("click", () => {
+          closeButton.setAttribute("visible", false);
           portfolioOneFirst.setAttribute("visible", false);
           portfolioLeftButton.setAttribute("visible", false);
           portfolioRightButton.setAttribute("visible", false);
@@ -229,12 +226,7 @@
         const portfolioRightButton = document.querySelector(
           "#portfolio-right-button"
         );
-        const portfolioNotLeftButton = document.querySelector(
-          ":not(#portfolio-left-button)"
-        );
-        const portfolioNotRightButton = document.querySelector(
-          ":not(#portfolio-right-button)"
-        );
+        const closeButton = document.querySelector("#close-button");
 
         portfolioTwo.setAttribute("visible", true);
 
@@ -266,13 +258,8 @@
           }
           portfolioTwo.setAttribute("position", "0 " + y + " -0.01");
         }, 10);
-        portfolioNotLeftButton.addEventListener("click", () => {
-          portfolioTwoFirst.setAttribute("visible", false);
-          portfolioLeftButton.setAttribute("visible", false);
-          portfolioRightButton.setAttribute("visible", false);
-          portfolioTwo.setAttribute("visible", false);
-        });
-        portfolioNotRightButton.addEventListener("click", () => {
+        closeButton.addEventListener("click", () => {
+          closeButton.setAttribute("visible", false);
           portfolioTwoFirst.setAttribute("visible", false);
           portfolioLeftButton.setAttribute("visible", false);
           portfolioRightButton.setAttribute("visible", false);
@@ -292,12 +279,7 @@
         const portfolioRightButton = document.querySelector(
           "#portfolio-right-button"
         );
-        const portfolioNotLeftButton = document.querySelector(
-          ":not(#portfolio-left-button)"
-        );
-        const portfolioNotRightButton = document.querySelector(
-          ":not(#portfolio-right-button)"
-        );
+        const closeButton = document.querySelector("#close-button");
 
         portfolioThree.setAttribute("visible", true);
 
@@ -329,13 +311,8 @@
           }
           portfolioThree.setAttribute("position", "0 " + y + " -0.01");
         }, 10);
-        portfolioNotLeftButton.addEventListener("click", () => {
-          portfolioThreeFirst.setAttribute("visible", false);
-          portfolioLeftButton.setAttribute("visible", false);
-          portfolioRightButton.setAttribute("visible", false);
-          portfolioThree.setAttribute("visible", false);
-        });
-        portfolioNotRightButton.addEventListener("click", () => {
+        closeButton.addEventListener("click", () => {
+          closeButton.setAttribute("visible", false);
           portfolioThreeFirst.setAttribute("visible", false);
           portfolioLeftButton.setAttribute("visible", false);
           portfolioRightButton.setAttribute("visible", false);
@@ -355,12 +332,7 @@
         const portfolioRightButton = document.querySelector(
           "#portfolio-right-button"
         );
-        const portfolioNotLeftButton = document.querySelector(
-          ":not(#portfolio-left-button)"
-        );
-        const portfolioNotRightButton = document.querySelector(
-          ":not(#portfolio-right-button)"
-        );
+        const closeButton = document.querySelector("#close-button");
 
         portfolioFour.setAttribute("visible", true);
 
@@ -384,13 +356,8 @@
           }
           portfolioFour.setAttribute("position", "0 " + y + " -0.01");
         }, 10);
-        portfolioNotLeftButton.addEventListener("click", () => {
-          portfolioFourFirst.setAttribute("visible", false);
-          portfolioLeftButton.setAttribute("visible", false);
-          portfolioRightButton.setAttribute("visible", false);
-          portfolioFour.setAttribute("visible", false);
-        });
-        portfolioNotRightButton.addEventListener("click", () => {
+        closeButton.addEventListener("click", () => {
+          closeButton.setAttribute("visible", false);
           portfolioFourFirst.setAttribute("visible", false);
           portfolioLeftButton.setAttribute("visible", false);
           portfolioRightButton.setAttribute("visible", false);
@@ -410,12 +377,7 @@
         const portfolioRightButton = document.querySelector(
           "#portfolio-right-button"
         );
-        const portfolioNotLeftButton = document.querySelector(
-          ":not(#portfolio-left-button)"
-        );
-        const portfolioNotRightButton = document.querySelector(
-          ":not(#portfolio-right-button)"
-        );
+        const closeButton = document.querySelector("#close-button");
 
         portfolioFive.setAttribute("visible", true);
 
@@ -447,13 +409,8 @@
           }
           portfolioFive.setAttribute("position", "0 " + y + " -0.01");
         }, 10);
-        portfolioNotLeftButton.addEventListener("click", () => {
-          portfolioFiveFirst.setAttribute("visible", false);
-          portfolioLeftButton.setAttribute("visible", false);
-          portfolioRightButton.setAttribute("visible", false);
-          portfolioFive.setAttribute("visible", false);
-        });
-        portfolioNotRightButton.addEventListener("click", () => {
+        closeButton.addEventListener("click", () => {
+          closeButton.setAttribute("visible", false);
           portfolioFiveFirst.setAttribute("visible", false);
           portfolioLeftButton.setAttribute("visible", false);
           portfolioRightButton.setAttribute("visible", false);
@@ -561,6 +518,8 @@
           <img id="icon-three" src="./haian/icons/3.webp" />
           <img id="icon-four" src="./haian/icons/4.webp" />
           <img id="icon-five" src="./haian/icons/5.webp" />
+
+          <img id="icon-close" src="./haian/icons/close.webp" />
 
           <img id="icon-left" src="./haian/icons/left.webp" />
           <img id="icon-right" src="./haian/icons/right.webp" />
@@ -859,6 +818,18 @@
             position="0.35 0.42 0"
             height="0.15"
             width="0.15"
+          ></a-image>
+
+          <a-image
+            visible="false"
+            id="close-button"
+            class="clickable"
+            src="#icon-close"
+            position="0.35 0.7 0"
+            height="0.05"
+            width="0.05"
+            opacity="0.8"
+            animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
           ></a-image>
 
           <a-image
