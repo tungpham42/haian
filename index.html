@@ -416,10 +416,15 @@
           portfolioFive.setAttribute("position", "0 " + y + " -0.01");
         }, 10);
         document.addEventListener("click", function (event) {
-          if (
-            portfolioLeftButton.contains(event.target) ||
-            portfolioRightButton.contains(event.target)
-          ) {
+          if (!portfolioLeftButton.contains(event.target)) {
+            portfolioFiveFirst.setAttribute("visible", false);
+            portfolioLeftButton.setAttribute("visible", false);
+            portfolioRightButton.setAttribute("visible", false);
+            portfolioFive.setAttribute("visible", false);
+          }
+        });
+        document.addEventListener("click", function (event) {
+          if (!portfolioRightButton.contains(event.target)) {
             portfolioFiveFirst.setAttribute("visible", false);
             portfolioLeftButton.setAttribute("visible", false);
             portfolioRightButton.setAttribute("visible", false);
