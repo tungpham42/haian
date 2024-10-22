@@ -166,6 +166,12 @@
         const portfolioRightButton = document.querySelector(
           "#portfolio-right-button"
         );
+        const portfolioNotLeftButton = document.querySelector(
+          ":not(##portfolio-left-button)"
+        );
+        const portfolioNotRightButton = document.querySelector(
+          ":not(##portfolio-right-button)"
+        );
 
         portfolioOne.setAttribute("visible", true);
 
@@ -197,12 +203,18 @@
           }
           portfolioOne.setAttribute("position", "0 " + y + " -0.01");
         }, 10);
-        setTimeout(() => {
+        portfolioNotLeftButton.addEventListener("click", () => {
           portfolioOneFirst.setAttribute("visible", false);
           portfolioLeftButton.setAttribute("visible", false);
           portfolioRightButton.setAttribute("visible", false);
           portfolioOne.setAttribute("visible", false);
-        }, 7000);
+        });
+        portfolioNotRightButton.addEventListener("click", () => {
+          portfolioOneFirst.setAttribute("visible", false);
+          portfolioLeftButton.setAttribute("visible", false);
+          portfolioRightButton.setAttribute("visible", false);
+          portfolioOne.setAttribute("visible", false);
+        });
       };
       const showPortfolioTwo = (done) => {
         let y = 0;
@@ -216,6 +228,12 @@
         );
         const portfolioRightButton = document.querySelector(
           "#portfolio-right-button"
+        );
+        const portfolioNotLeftButton = document.querySelector(
+          ":not(##portfolio-left-button)"
+        );
+        const portfolioNotRightButton = document.querySelector(
+          ":not(##portfolio-right-button)"
         );
 
         portfolioTwo.setAttribute("visible", true);
@@ -248,12 +266,18 @@
           }
           portfolioTwo.setAttribute("position", "0 " + y + " -0.01");
         }, 10);
-        setTimeout(() => {
+        portfolioNotLeftButton.addEventListener("click", () => {
           portfolioTwoFirst.setAttribute("visible", false);
           portfolioLeftButton.setAttribute("visible", false);
           portfolioRightButton.setAttribute("visible", false);
           portfolioTwo.setAttribute("visible", false);
-        }, 7000);
+        });
+        portfolioNotRightButton.addEventListener("click", () => {
+          portfolioTwoFirst.setAttribute("visible", false);
+          portfolioLeftButton.setAttribute("visible", false);
+          portfolioRightButton.setAttribute("visible", false);
+          portfolioTwo.setAttribute("visible", false);
+        });
       };
       const showPortfolioThree = (done) => {
         let y = 0;
@@ -267,6 +291,12 @@
         );
         const portfolioRightButton = document.querySelector(
           "#portfolio-right-button"
+        );
+        const portfolioNotLeftButton = document.querySelector(
+          ":not(##portfolio-left-button)"
+        );
+        const portfolioNotRightButton = document.querySelector(
+          ":not(##portfolio-right-button)"
         );
 
         portfolioThree.setAttribute("visible", true);
@@ -299,12 +329,18 @@
           }
           portfolioThree.setAttribute("position", "0 " + y + " -0.01");
         }, 10);
-        setTimeout(() => {
+        portfolioNotLeftButton.addEventListener("click", () => {
           portfolioThreeFirst.setAttribute("visible", false);
           portfolioLeftButton.setAttribute("visible", false);
           portfolioRightButton.setAttribute("visible", false);
           portfolioThree.setAttribute("visible", false);
-        }, 7000);
+        });
+        portfolioNotRightButton.addEventListener("click", () => {
+          portfolioThreeFirst.setAttribute("visible", false);
+          portfolioLeftButton.setAttribute("visible", false);
+          portfolioRightButton.setAttribute("visible", false);
+          portfolioThree.setAttribute("visible", false);
+        });
       };
       const showPortfolioFour = (done) => {
         let y = 0;
@@ -318,6 +354,12 @@
         );
         const portfolioRightButton = document.querySelector(
           "#portfolio-right-button"
+        );
+        const portfolioNotLeftButton = document.querySelector(
+          ":not(##portfolio-left-button)"
+        );
+        const portfolioNotRightButton = document.querySelector(
+          ":not(##portfolio-right-button)"
         );
 
         portfolioFour.setAttribute("visible", true);
@@ -342,12 +384,18 @@
           }
           portfolioFour.setAttribute("position", "0 " + y + " -0.01");
         }, 10);
-        setTimeout(() => {
+        portfolioNotLeftButton.addEventListener("click", () => {
           portfolioFourFirst.setAttribute("visible", false);
           portfolioLeftButton.setAttribute("visible", false);
           portfolioRightButton.setAttribute("visible", false);
           portfolioFour.setAttribute("visible", false);
-        }, 7000);
+        });
+        portfolioNotRightButton.addEventListener("click", () => {
+          portfolioFourFirst.setAttribute("visible", false);
+          portfolioLeftButton.setAttribute("visible", false);
+          portfolioRightButton.setAttribute("visible", false);
+          portfolioFour.setAttribute("visible", false);
+        });
       };
       const showPortfolioFive = (done) => {
         let y = 0;
@@ -361,6 +409,12 @@
         );
         const portfolioRightButton = document.querySelector(
           "#portfolio-right-button"
+        );
+        const portfolioNotLeftButton = document.querySelector(
+          ":not(##portfolio-left-button)"
+        );
+        const portfolioNotRightButton = document.querySelector(
+          ":not(##portfolio-right-button)"
         );
 
         portfolioFive.setAttribute("visible", true);
@@ -393,12 +447,18 @@
           }
           portfolioFive.setAttribute("position", "0 " + y + " -0.01");
         }, 10);
-        setTimeout(() => {
+        portfolioNotLeftButton.addEventListener("click", () => {
           portfolioFiveFirst.setAttribute("visible", false);
           portfolioLeftButton.setAttribute("visible", false);
           portfolioRightButton.setAttribute("visible", false);
           portfolioFive.setAttribute("visible", false);
-        }, 7000);
+        });
+        portfolioNotRightButton.addEventListener("click", () => {
+          portfolioFiveFirst.setAttribute("visible", false);
+          portfolioLeftButton.setAttribute("visible", false);
+          portfolioRightButton.setAttribute("visible", false);
+          portfolioFive.setAttribute("visible", false);
+        });
       };
       AFRAME.registerComponent("haiantarget", {
         init: function () {
