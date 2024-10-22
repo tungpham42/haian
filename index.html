@@ -49,18 +49,10 @@
         const text = document.querySelector("#text");
 
         oneButton.setAttribute("visible", true);
-        setTimeout(() => {
-          twoButton.setAttribute("visible", true);
-        }, 200);
-        setTimeout(() => {
-          threeButton.setAttribute("visible", true);
-        }, 400);
-        setTimeout(() => {
-          fourButton.setAttribute("visible", true);
-        }, 600);
-        setTimeout(() => {
-          fiveButton.setAttribute("visible", true);
-        }, 800);
+        twoButton.setAttribute("visible", true);
+        threeButton.setAttribute("visible", true);
+        fourButton.setAttribute("visible", true);
+        fiveButton.setAttribute("visible", true);
 
         let currentTab = "one";
         oneButton.addEventListener("click", function (evt) {
