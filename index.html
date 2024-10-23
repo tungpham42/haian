@@ -56,6 +56,13 @@
 
         let currentTab = "one";
         oneButton.addEventListener("click", function (evt) {
+          oneButton.setAttribute("src", "#icon-one-clicked");
+
+          twoButton.setAttribute("src", "#icon-two");
+          threeButton.setAttribute("src", "#icon-three");
+          fourButton.setAttribute("src", "#icon-four");
+          fiveButton.setAttribute("src", "#icon-five");
+
           portfolioOne.setAttribute("visible", true);
           portfolioOneFirst.setAttribute("visible", true);
           portfolioLeftButton.setAttribute("visible", true);
@@ -75,6 +82,13 @@
           currentTab = "one";
         });
         twoButton.addEventListener("click", function (evt) {
+          twoButton.setAttribute("src", "#icon-two-clicked");
+
+          oneButton.setAttribute("src", "#icon-one");
+          threeButton.setAttribute("src", "#icon-three");
+          fourButton.setAttribute("src", "#icon-four");
+          fiveButton.setAttribute("src", "#icon-five");
+
           portfolioTwo.setAttribute("visible", true);
           portfolioTwoFirst.setAttribute("visible", true);
           portfolioLeftButton.setAttribute("visible", true);
@@ -94,6 +108,13 @@
           currentTab = "two";
         });
         threeButton.addEventListener("click", function (evt) {
+          threeButton.setAttribute("src", "#icon-three-clicked");
+
+          oneButton.setAttribute("src", "#icon-one");
+          twoButton.setAttribute("src", "#icon-two");
+          fourButton.setAttribute("src", "#icon-four");
+          fiveButton.setAttribute("src", "#icon-five");
+
           portfolioThree.setAttribute("visible", true);
           portfolioThreeFirst.setAttribute("visible", true);
           portfolioLeftButton.setAttribute("visible", true);
@@ -113,6 +134,13 @@
           currentTab = "three";
         });
         fourButton.addEventListener("click", function (evt) {
+          fourButton.setAttribute("src", "#icon-four-clicked");
+
+          oneButton.setAttribute("src", "#icon-one");
+          twoButton.setAttribute("src", "#icon-two");
+          threeButton.setAttribute("src", "#icon-three");
+          fiveButton.setAttribute("src", "#icon-five");
+
           portfolioFour.setAttribute("visible", true);
           portfolioFourFirst.setAttribute("visible", true);
           portfolioLeftButton.setAttribute("visible", true);
@@ -132,6 +160,13 @@
           currentTab = "four";
         });
         fiveButton.addEventListener("click", function (evt) {
+          fiveButton.setAttribute("src", "#icon-five-clicked");
+
+          oneButton.setAttribute("src", "#icon-one");
+          twoButton.setAttribute("src", "#icon-two");
+          threeButton.setAttribute("src", "#icon-three");
+          fourButton.setAttribute("src", "#icon-four");
+
           portfolioFive.setAttribute("visible", true);
           portfolioFiveFirst.setAttribute("visible", true);
           portfolioLeftButton.setAttribute("visible", true);
@@ -155,6 +190,7 @@
       const showPortfolioOne = (done) => {
         let y = 0;
         let currentItem = 0;
+        const oneButton = document.querySelector("#one-button");
         const portfolioOne = document.querySelector("#portfolio-panel-one");
         const portfolioOneFirst = document.querySelector(
           "#portfolio-item-one-0"
@@ -188,6 +224,7 @@
         });
         portfolioOne.setAttribute("position", "0 0.6 -0.01");
         closeButton.addEventListener("click", () => {
+          oneButton.setAttribute("src", "#icon-one");
           closeButton.setAttribute("visible", false);
           portfolioOneFirst.setAttribute("visible", false);
           portfolioLeftButton.setAttribute("visible", false);
@@ -198,6 +235,7 @@
       const showPortfolioTwo = (done) => {
         let y = 0;
         let currentItem = 0;
+        const twoButton = document.querySelector("#two-button");
         const portfolioTwo = document.querySelector("#portfolio-panel-two");
         const portfolioTwoFirst = document.querySelector(
           "#portfolio-item-two-0"
@@ -231,6 +269,7 @@
         });
         portfolioTwo.setAttribute("position", "0 0.6 -0.01");
         closeButton.addEventListener("click", () => {
+          twoButton.setAttribute("src", "#icon-two");
           closeButton.setAttribute("visible", false);
           portfolioTwoFirst.setAttribute("visible", false);
           portfolioLeftButton.setAttribute("visible", false);
@@ -241,6 +280,7 @@
       const showPortfolioThree = (done) => {
         let y = 0;
         let currentItem = 0;
+        const threeButton = document.querySelector("#three-button");
         const portfolioThree = document.querySelector("#portfolio-panel-three");
         const portfolioThreeFirst = document.querySelector(
           "#portfolio-item-three-0"
@@ -274,6 +314,7 @@
         });
         portfolioThree.setAttribute("position", "0 0.6 -0.01");
         closeButton.addEventListener("click", () => {
+          threeButton.setAttribute("src", "#icon-three");
           closeButton.setAttribute("visible", false);
           portfolioThreeFirst.setAttribute("visible", false);
           portfolioLeftButton.setAttribute("visible", false);
@@ -284,6 +325,7 @@
       const showPortfolioFour = (done) => {
         let y = 0;
         let currentItem = 0;
+        const fourButton = document.querySelector("#four-button");
         const portfolioFour = document.querySelector("#portfolio-panel-four");
         const portfolioFourFirst = document.querySelector(
           "#portfolio-item-four-0"
@@ -309,6 +351,7 @@
         portfolioRightButton.setAttribute("visible", false);
         portfolioFour.setAttribute("position", "0 0.6 -0.01");
         closeButton.addEventListener("click", () => {
+          fourButton.setAttribute("src", "#icon-four");
           closeButton.setAttribute("visible", false);
           portfolioFourFirst.setAttribute("visible", false);
           portfolioLeftButton.setAttribute("visible", false);
@@ -319,6 +362,7 @@
       const showPortfolioFive = (done) => {
         let y = 0;
         let currentItem = 0;
+        const fiveButton = document.querySelector("#five-button");
         const portfolioFive = document.querySelector("#portfolio-panel-five");
         const portfolioFiveFirst = document.querySelector(
           "#portfolio-item-five-0"
@@ -352,6 +396,7 @@
         });
         portfolioFive.setAttribute("position", "0 0.6 -0.01");
         closeButton.addEventListener("click", () => {
+          fiveButton.setAttribute("src", "#icon-five");
           closeButton.setAttribute("visible", false);
           portfolioFiveFirst.setAttribute("visible", false);
           portfolioLeftButton.setAttribute("visible", false);
@@ -460,6 +505,12 @@
           <img id="icon-three" src="./haian/icons/3.webp" />
           <img id="icon-four" src="./haian/icons/4.webp" />
           <img id="icon-five" src="./haian/icons/5.webp" />
+
+          <img id="icon-one-clicked" src="./haian/icons/1-clicked.webp" />
+          <img id="icon-two-clicked" src="./haian/icons/2-clicked.webp" />
+          <img id="icon-three-clicked" src="./haian/icons/3-clicked.webp" />
+          <img id="icon-four-clicked" src="./haian/icons/4-clicked.webp" />
+          <img id="icon-five-clicked" src="./haian/icons/5-clicked.webp" />
 
           <img id="icon-close" src="./haian/icons/close.webp" />
 
