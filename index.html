@@ -57,11 +57,17 @@
         let currentTab = "one";
         oneButton.addEventListener("click", function (evt) {
           oneButton.setAttribute("src", "#icon-one-clicked");
+          oneButton.setAttribute("opacity", "1");
 
           twoButton.setAttribute("src", "#icon-two");
           threeButton.setAttribute("src", "#icon-three");
           fourButton.setAttribute("src", "#icon-four");
           fiveButton.setAttribute("src", "#icon-five");
+
+          twoButton.setAttribute("opacity", "0.5");
+          threeButton.setAttribute("opacity", "0.5");
+          fourButton.setAttribute("opacity", "0.5");
+          fiveButton.setAttribute("opacity", "0.5");
 
           portfolioOne.setAttribute("visible", true);
           portfolioOneFirst.setAttribute("visible", true);
@@ -83,11 +89,17 @@
         });
         twoButton.addEventListener("click", function (evt) {
           twoButton.setAttribute("src", "#icon-two-clicked");
+          twoButton.setAttribute("opacity", "1");
 
           oneButton.setAttribute("src", "#icon-one");
           threeButton.setAttribute("src", "#icon-three");
           fourButton.setAttribute("src", "#icon-four");
           fiveButton.setAttribute("src", "#icon-five");
+
+          oneButton.setAttribute("opacity", "0.5");
+          threeButton.setAttribute("opacity", "0.5");
+          fourButton.setAttribute("opacity", "0.5");
+          fiveButton.setAttribute("opacity", "0.5");
 
           portfolioTwo.setAttribute("visible", true);
           portfolioTwoFirst.setAttribute("visible", true);
@@ -109,11 +121,17 @@
         });
         threeButton.addEventListener("click", function (evt) {
           threeButton.setAttribute("src", "#icon-three-clicked");
+          threeButton.setAttribute("opacity", "1");
 
           oneButton.setAttribute("src", "#icon-one");
           twoButton.setAttribute("src", "#icon-two");
           fourButton.setAttribute("src", "#icon-four");
           fiveButton.setAttribute("src", "#icon-five");
+
+          oneButton.setAttribute("opacity", "0.5");
+          twoButton.setAttribute("opacity", "0.5");
+          fourButton.setAttribute("opacity", "0.5");
+          fiveButton.setAttribute("opacity", "0.5");
 
           portfolioThree.setAttribute("visible", true);
           portfolioThreeFirst.setAttribute("visible", true);
@@ -135,11 +153,17 @@
         });
         fourButton.addEventListener("click", function (evt) {
           fourButton.setAttribute("src", "#icon-four-clicked");
+          fourButton.setAttribute("opacity", "1");
 
           oneButton.setAttribute("src", "#icon-one");
           twoButton.setAttribute("src", "#icon-two");
           threeButton.setAttribute("src", "#icon-three");
           fiveButton.setAttribute("src", "#icon-five");
+
+          oneButton.setAttribute("opacity", "0.5");
+          twoButton.setAttribute("opacity", "0.5");
+          threeButton.setAttribute("opacity", "0.5");
+          fiveButton.setAttribute("opacity", "0.5");
 
           portfolioFour.setAttribute("visible", true);
           portfolioFourFirst.setAttribute("visible", true);
@@ -161,11 +185,17 @@
         });
         fiveButton.addEventListener("click", function (evt) {
           fiveButton.setAttribute("src", "#icon-five-clicked");
+          fiveButton.setAttribute("opacity", "1");
 
           oneButton.setAttribute("src", "#icon-one");
           twoButton.setAttribute("src", "#icon-two");
           threeButton.setAttribute("src", "#icon-three");
           fourButton.setAttribute("src", "#icon-four");
+
+          oneButton.setAttribute("opacity", "0.5");
+          twoButton.setAttribute("opacity", "0.5");
+          threeButton.setAttribute("opacity", "0.5");
+          fourButton.setAttribute("opacity", "0.5");
 
           portfolioFive.setAttribute("visible", true);
           portfolioFiveFirst.setAttribute("visible", true);
@@ -225,6 +255,7 @@
         portfolioOne.setAttribute("position", "0 0.6 -0.01");
         closeButton.addEventListener("click", () => {
           oneButton.setAttribute("src", "#icon-one");
+          oneButton.setAttribute("opacity", "0.5");
           closeButton.setAttribute("visible", false);
           portfolioOneFirst.setAttribute("visible", false);
           portfolioLeftButton.setAttribute("visible", false);
@@ -270,6 +301,7 @@
         portfolioTwo.setAttribute("position", "0 0.6 -0.01");
         closeButton.addEventListener("click", () => {
           twoButton.setAttribute("src", "#icon-two");
+          twoButton.setAttribute("opacity", "0.5");
           closeButton.setAttribute("visible", false);
           portfolioTwoFirst.setAttribute("visible", false);
           portfolioLeftButton.setAttribute("visible", false);
@@ -315,6 +347,7 @@
         portfolioThree.setAttribute("position", "0 0.6 -0.01");
         closeButton.addEventListener("click", () => {
           threeButton.setAttribute("src", "#icon-three");
+          threeButton.setAttribute("opacity", "0.5");
           closeButton.setAttribute("visible", false);
           portfolioThreeFirst.setAttribute("visible", false);
           portfolioLeftButton.setAttribute("visible", false);
@@ -352,6 +385,7 @@
         portfolioFour.setAttribute("position", "0 0.6 -0.01");
         closeButton.addEventListener("click", () => {
           fourButton.setAttribute("src", "#icon-four");
+          fourButton.setAttribute("opacity", "0.5");
           closeButton.setAttribute("visible", false);
           portfolioFourFirst.setAttribute("visible", false);
           portfolioLeftButton.setAttribute("visible", false);
@@ -397,6 +431,7 @@
         portfolioFive.setAttribute("position", "0 0.6 -0.01");
         closeButton.addEventListener("click", () => {
           fiveButton.setAttribute("src", "#icon-five");
+          fiveButton.setAttribute("opacity", "0.5");
           closeButton.setAttribute("visible", false);
           portfolioFiveFirst.setAttribute("visible", false);
           portfolioLeftButton.setAttribute("visible", false);
@@ -813,7 +848,7 @@
             position="-0.38 0 0.132"
             height="0.05"
             width="0.05"
-            opacity="0.8"
+            opacity="0.5"
             animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
           ></a-image>
 
@@ -826,7 +861,7 @@
             position="-0.6 -0.18 0.097"
             height="0.05"
             width="0.05"
-            opacity="0.8"
+            opacity="0.5"
             animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
           ></a-image>
 
@@ -838,7 +873,7 @@
             position="-0.475 -0.18 0.105"
             height="0.05"
             width="0.05"
-            opacity="0.8"
+            opacity="0.5"
             animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
           ></a-image>
 
@@ -850,7 +885,7 @@
             position="-0.38 -0.18 0.11"
             height="0.05"
             width="0.05"
-            opacity="0.8"
+            opacity="0.5"
             animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
           ></a-image>
 
@@ -862,7 +897,7 @@
             position="0.16 -0.2 0.115"
             height="0.05"
             width="0.05"
-            opacity="0.8"
+            opacity="0.5"
             animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
           ></a-image>
 
