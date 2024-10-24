@@ -452,11 +452,19 @@
       if (menhgia) {
         const scene = document.querySelector("#scene");
         console.log(menhgia);
-        scene.setAttribute(
-          "mindar-image",
-          `imageTargetSrc: ./${menhgia}.mind; filterMinCF: 0.0001; filterBeta: 0.0001; warmupTolerance: 1; missTolerance: 30; maxTrack: 50; showStats: false;`
-        );
+
+        // Set the mindar-image attributes using setAttribute method
+        scene.setAttribute("mindar-image", {
+          imageTargetSrc: `./${menhgia}.mind`,
+          filterMinCF: 0.0001,
+          filterBeta: 0.0001,
+          warmupTolerance: 1,
+          missTolerance: 30,
+          maxTrack: 50,
+          showStats: false,
+        });
       }
+
       AFRAME.registerComponent("haiantarget", {
         init: function () {
           this.el.addEventListener("targetFound", (event) => {
