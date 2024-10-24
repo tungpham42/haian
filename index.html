@@ -237,7 +237,7 @@
         portfolioOne.setAttribute("visible", true);
 
         const showPortfolioOneItem = (item) => {
-          for (let i = 0; i <= 2; i++) {
+          for (let i = 0; i < totalItem; i++) {
             document
               .querySelector("#portfolio-item-one-" + (i + 1))
               .setAttribute("visible", i === item);
@@ -284,7 +284,7 @@
         portfolioTwo.setAttribute("visible", true);
 
         const showPortfolioTwoItem = (item) => {
-          for (let i = 0; i <= 2; i++) {
+          for (let i = 0; i < totalItem; i++) {
             document
               .querySelector("#portfolio-item-two-" + (i + 1))
               .setAttribute("visible", i === item);
@@ -331,7 +331,7 @@
         portfolioThree.setAttribute("visible", true);
 
         const showPortfolioThreeItem = (item) => {
-          for (let i = 0; i <= 2; i++) {
+          for (let i = 0; i < totalItem; i++) {
             document
               .querySelector("#portfolio-item-three-" + (i + 1))
               .setAttribute("visible", i === item);
@@ -378,7 +378,7 @@
         portfolioFour.setAttribute("visible", true);
 
         const showPortfolioFourItem = (item) => {
-          for (let i = 0; i <= 0; i++) {
+          for (let i = 0; i < totalItem; i++) {
             document
               .querySelector("#portfolio-item-four-" + (i + 1))
               .setAttribute("visible", i === item);
@@ -417,7 +417,7 @@
         portfolioFive.setAttribute("visible", true);
 
         const showPortfolioFiveItem = (item) => {
-          for (let i = 0; i <= 1; i++) {
+          for (let i = 0; i < totalItem; i++) {
             document
               .querySelector("#portfolio-item-five-" + (i + 1))
               .setAttribute("visible", i === item);
@@ -1318,7 +1318,7 @@
             id="portfolio-left-button"
             class="clickable"
             src="#icon-left"
-            position="-0.4 0.42 0"
+            position="-0.42 0.42 0"
             height="0.15"
             width="0.15"
           ></a-image>
@@ -1327,7 +1327,7 @@
             id="portfolio-right-button"
             class="clickable"
             src="#icon-right"
-            position="0.4 0.42 0"
+            position="0.42 0.42 0"
             height="0.15"
             width="0.15"
           ></a-image>
