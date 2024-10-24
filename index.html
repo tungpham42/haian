@@ -912,19 +912,29 @@
       </a-scene>
     </div>
     <script>
-      // Function to update imageTargetSrc based on query string
+      // Function to update the mindar-image attribute based on the query string
       function updateImageTargetSrc() {
         const urlParams = new URLSearchParams(window.location.search);
         const menhgiaValue = urlParams.get("menhgia");
 
+        // Debugging output to console
+        console.log(`Query parameter 'menhgia': ${menhgiaValue}`);
+
         if (menhgiaValue) {
           const mindarScene = document.getElementById("mindar-scene");
-          // Update the mindar-image attribute with the new image target source
-          mindarScene.setAttribute(
-            "mindar-image",
-            `imageTargetSrc: ./${menhgiaValue}.mind; filterMinCF: 0.0001; filterBeta: 0.0001; warmupTolerance: 1; missTolerance: 30; maxTrack: 50; showStats: false;`
-          );
-          console.log(`Updated imageTargetSrc to: ${menhgiaValue}`);
+
+          // Ensure the scene is ready to accept updates
+          if (mindarScene.hasAttribute("mindar-image")) {
+            const newMindSrc = `imageTargetSrc: ./${menhgiaValue}.mind; filterMinCF: 0.0001; filterBeta: 0.0001; warmupTolerance: 1; missTolerance: 30; maxTrack: 50; showStats: false;`;
+            mindarScene.setAttribute("mindar-image", newMindSrc);
+
+            // Debugging output to confirm the update
+            console.log(`Updated imageTargetSrc to: ${menhgiaValue}`);
+          } else {
+            console.error("mindar-image attribute not found on scene.");
+          }
+        } else {
+          console.warn("No 'menhgia' query parameter found.");
         }
       }
 
