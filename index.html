@@ -528,6 +528,7 @@
   <body>
     <div class="haian-container">
       <a-scene
+        id="mindar-scene"
         mindar-image="imageTargetSrc: ./track.mind; filterMinCF: 0.0001; filterBeta: 0.0001; warmupTolerance: 1; missTolerance: 30; maxTrack: 50; showStats: false;"
         color-space="sRGB"
         renderer="colorManagement: true, physicallyCorrectLights"
@@ -910,5 +911,25 @@
         <a-entity environment="preset: default"></a-entity>
       </a-scene>
     </div>
+    <script>
+      // Function to update imageTargetSrc based on query string
+      function updateImageTargetSrc() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const menhgiaValue = urlParams.get("menhgia");
+
+        if (menhgiaValue) {
+          const mindarScene = document.getElementById("mindar-scene");
+          // Update the mindar-image attribute with the new image target source
+          mindarScene.setAttribute(
+            "mindar-image",
+            `imageTargetSrc: ${menhgiaValue}; filterMinCF: 0.0001; filterBeta: 0.0001; warmupTolerance: 1; missTolerance: 30; maxTrack: 50; showStats: false;`
+          );
+          console.log(`Updated imageTargetSrc to: ${menhgiaValue}`);
+        }
+      }
+
+      // Call the function on page load
+      window.onload = updateImageTargetSrc;
+    </script>
   </body>
 </html>
