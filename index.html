@@ -925,18 +925,23 @@
       // Update the a-scene based on the query parameter
       if (menhgia) {
         const scene = document.querySelector("#scene");
-        console.log(menhgia);
+        console.log("Menhgia:", menhgia);
 
-        // Update the mindar-image attribute in the a-scene
+        // Directly set the attribute on the mindar-image component
+        scene.setAttribute("mindar-image", {
+          imageTargetSrc: `./${menhgia}.mind`,
+          filterMinCF: 0.0001,
+          filterBeta: 0.0001,
+          warmupTolerance: 1,
+          missTolerance: 30,
+          maxTrack: 50,
+          showStats: false,
+        });
+
+        // If the mindar-image needs to be refreshed, you can reinitialize it
         const mindarImageComponent = scene.components["mindar-image"];
-
         if (mindarImageComponent) {
-          mindarImageComponent.setAttribute(
-            "imageTargetSrc",
-            `./${menhgia}.mind`
-          );
-
-          // Reinitialize or update the component if necessary
+          // Call the update method if necessary (depends on the implementation)
           mindarImageComponent.update();
         } else {
           console.error("mindar-image component not found.");
