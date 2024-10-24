@@ -922,21 +922,25 @@
       // Extract the 'menhgia' query parameter
       const menhgia = getQueryParameter("menhgia");
 
-      // Update the imageTargetSrc based on the query parameter
+      // Update the a-scene based on the query parameter
       if (menhgia) {
         const scene = document.querySelector("#scene");
         console.log(menhgia);
 
-        // Set the mindar-image attributes using setAttribute method
-        scene.setAttribute("mindar-image", {
-          imageTargetSrc: `./${menhgia}.mind`,
-          filterMinCF: 0.0001,
-          filterBeta: 0.0001,
-          warmupTolerance: 1,
-          missTolerance: 30,
-          maxTrack: 50,
-          showStats: false,
-        });
+        // Update the mindar-image attribute in the a-scene
+        const mindarImageComponent = scene.components["mindar-image"];
+
+        if (mindarImageComponent) {
+          mindarImageComponent.setAttribute(
+            "imageTargetSrc",
+            `./${menhgia}.mind`
+          );
+
+          // Reinitialize or update the component if necessary
+          mindarImageComponent.update();
+        } else {
+          console.error("mindar-image component not found.");
+        }
       }
     </script>
   </body>
