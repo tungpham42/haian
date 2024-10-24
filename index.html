@@ -439,7 +439,6 @@
           portfolioFive.setAttribute("visible", false);
         });
       };
-
       AFRAME.registerComponent("haiantarget", {
         init: function () {
           this.el.addEventListener("targetFound", (event) => {
@@ -529,7 +528,6 @@
   <body>
     <div class="haian-container">
       <a-scene
-        id="scene"
         mindar-image="imageTargetSrc: ./track.mind; filterMinCF: 0.0001; filterBeta: 0.0001; warmupTolerance: 1; missTolerance: 30; maxTrack: 50; showStats: false;"
         color-space="sRGB"
         renderer="colorManagement: true, physicallyCorrectLights"
@@ -912,41 +910,5 @@
         <a-entity environment="preset: default"></a-entity>
       </a-scene>
     </div>
-    <script>
-      // Function to get query parameter value by name
-      function getQueryParameter(name) {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get(name);
-      }
-
-      // Extract the 'menhgia' query parameter
-      const menhgia = getQueryParameter("menhgia");
-
-      // Update the a-scene based on the query parameter
-      if (menhgia) {
-        const scene = document.querySelector("#scene");
-        console.log("Menhgia:", menhgia);
-
-        // Directly set the attribute on the mindar-image component
-        scene.setAttribute("mindar-image", {
-          imageTargetSrc: `./${menhgia}.mind`,
-          filterMinCF: 0.0001,
-          filterBeta: 0.0001,
-          warmupTolerance: 1,
-          missTolerance: 30,
-          maxTrack: 50,
-          showStats: false,
-        });
-
-        // If the mindar-image needs to be refreshed, you can reinitialize it
-        const mindarImageComponent = scene.components["mindar-image"];
-        if (mindarImageComponent) {
-          // Call the update method if necessary (depends on the implementation)
-          mindarImageComponent.update();
-        } else {
-          console.error("mindar-image component not found.");
-        }
-      }
-    </script>
   </body>
 </html>
