@@ -1415,19 +1415,17 @@
       </a-scene>
     </div>
     <script>
-      var mindarScene = document.getElementById("mindar-scene");
-
       /* When the openFullscreen() function is executed, open the video in fullscreen.
 Note that we must include prefixes for different browsers, as they don't support the requestFullscreen property yet */
       function openFullscreen() {
-        if (mindarScene.requestFullscreen) {
-          mindarScene.requestFullscreen();
-        } else if (mindarScene.webkitRequestFullscreen) {
+        if (document.body.requestFullscreen) {
+          document.body.requestFullscreen();
+        } else if (document.body.webkitRequestFullscreen) {
           /* Safari */
-          mindarScene.webkitRequestFullscreen();
-        } else if (mindarScene.msRequestFullscreen) {
+          document.body.webkitRequestFullscreen();
+        } else if (document.body.msRequestFullscreen) {
           /* IE11 */
-          mindarScene.msRequestFullscreen();
+          document.body.msRequestFullscreen();
         }
       }
       openFullscreen();
