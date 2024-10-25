@@ -528,15 +528,20 @@
           top: calc(100% - 10px);
         }
       }
+      #fullscreen-button {
+        position: fixed;
+        left: 50%;
+        top: 0;
+        padding: 1.2em 2.4em;
+        font-size: 20px;
+        background-color: darkgoldenrod;
+        color: white;
+        z-index: 9999999;
+      }
     </style>
   </head>
   <body>
-    <button
-      style="position: fixed; left: 50%; top: 0; z-index: 9999999"
-      id="fullscreen-button"
-    >
-      Fullscreen
-    </button>
+    <button id="fullscreen-button">Fullscreen</button>
     <div class="haian-container" id="haianContainer">
       <a-scene
         id="mindar-scene"
