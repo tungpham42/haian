@@ -1413,23 +1413,14 @@
         </a-entity>
         <a-entity environment="preset: default"></a-entity>
       </a-scene>
-      <button onclick="goFullscreen()">Go Fullscreen</button>
     </div>
     <script>
-      function goFullscreen() {
-        const element = document.getElementById("haianContainer");
+      let isFullscreen = document.fullscreenElement;
 
-        // Check if fullscreen is not already enabled
-        if (!document.fullscreenElement) {
-          element.requestFullscreen().catch((err) => {
-            console.error(
-              `Error attempting to enable full-screen mode: ${err.message}`
-            );
-          });
-        } else {
-          // Exit fullscreen
-          document.exitFullscreen();
-        }
+      if (isFullscreen) {
+        document.exitFullscreen();
+      } else {
+        document.querySelector("body").requestFullscreen();
       }
     </script>
   </body>
