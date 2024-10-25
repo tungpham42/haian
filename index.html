@@ -531,7 +531,7 @@
     </style>
   </head>
   <body>
-    <div class="haian-container">
+    <div class="haian-container" id="haianContainer">
       <a-scene
         id="mindar-scene"
         mindar-image="imageTargetSrc: ./track.mind; filterMinCF: 0.0001; filterBeta: 0.0001; warmupTolerance: 1; missTolerance: 30; maxTrack: 50; showStats: false;"
@@ -1413,36 +1413,22 @@
         </a-entity>
         <a-entity environment="preset: default"></a-entity>
       </a-scene>
+      <button onclick="toggleFullscreen()">Toggle Fullscreen</button>
     </div>
-    <button onclick="toggleFullscreen()">Fullscreen on/off</button>
     <script>
-      /* When the openFullscreen() function is executed, open the video in fullscreen.
-Note that we must include prefixes for different browsers, as they don't support the requestFullscreen property yet */
       function toggleFullscreen() {
-        if (
-          !document.fullscreenElement &&
-          !document.webkitFullscreenElement &&
-          !document.msFullscreenElement
-        ) {
-          // Enter fullscreen mode
-          const requestFullscreen =
-            document.body.requestFullscreen ||
-            document.body.webkitRequestFullscreen ||
-            document.body.msRequestFullscreen;
+        const element = document.getElementById("haianContainer");
 
-          if (requestFullscreen) {
-            requestFullscreen.call(document.body);
-          }
+        if (!document.fullscreenElement) {
+          // Request fullscreen mode
+          element.requestFullscreen().catch((err) => {
+            console.error(
+              `Error attempting to enable full-screen mode: ${err.message}`
+            );
+          });
         } else {
           // Exit fullscreen mode
-          const exitFullscreen =
-            document.exitFullscreen ||
-            document.webkitExitFullscreen ||
-            document.msExitFullscreen;
-
-          if (exitFullscreen) {
-            exitFullscreen.call(document);
-          }
+          document.exitFullscreen();
         }
       }
     </script>
