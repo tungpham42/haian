@@ -444,15 +444,6 @@
           portfolioFive.setAttribute("visible", false);
         });
       };
-      fullscreenButton = document.getElementById("fullscreenButton");
-      fullscreenButton.addEventListener("click", () => {
-        let isFullscreen = document.fullscreenElement;
-        if (isFullscreen) {
-          document.exitFullscreen();
-        } else {
-          document.querySelector("body").requestFullscreen();
-        }
-      });
       AFRAME.registerComponent("haiantarget", {
         init: function () {
           this.el.addEventListener("targetFound", (event) => {
@@ -541,7 +532,7 @@
   </head>
   <body>
     <div class="haian-container" id="haianContainer">
-      <button id="fullscreenButton">Fullscreen</button>
+      <button id="fullscreen-button">Fullscreen</button>
       <a-scene
         id="mindar-scene"
         mindar-image="imageTargetSrc: ./track.mind; filterMinCF: 0.0001; filterBeta: 0.0001; warmupTolerance: 1; missTolerance: 30; maxTrack: 50; showStats: false;"
@@ -1424,5 +1415,16 @@
         <a-entity environment="preset: default"></a-entity>
       </a-scene>
     </div>
+    <script>
+      fullscreenButton = document.getElementById("fullscreen-button");
+      fullscreenButton.addEventListener("click", () => {
+        let isFullscreen = document.fullscreenElement;
+        if (isFullscreen) {
+          document.exitFullscreen();
+        } else {
+          document.querySelector("body").requestFullscreen();
+        }
+      });
+    </script>
   </body>
 </html>
