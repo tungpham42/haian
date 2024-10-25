@@ -1440,7 +1440,7 @@
         const isFullscreen =
           document.fullscreenElement ||
           document.mozFullScreenElement || // Firefox
-          document.webkitFullscreenElement || // Chrome, Safari, Opera
+          document.webkitFullscreenElement || // Chrome, Safari, Opera, iOS Safari
           document.msFullscreenElement; // IE/Edge
 
         if (isFullscreen) {
@@ -1456,7 +1456,7 @@
           }
         } else {
           // Enter fullscreen mode
-          const body = document.querySelector("body");
+          const body = document.documentElement; // Use documentElement for better compatibility
           if (body.requestFullscreen) {
             body.requestFullscreen();
           } else if (body.mozRequestFullScreen) {
