@@ -1414,21 +1414,37 @@
         <a-entity environment="preset: default"></a-entity>
       </a-scene>
     </div>
+    <button onclick="toggleFullscreen()">Fullscreen on/off</button>
     <script>
       /* When the openFullscreen() function is executed, open the video in fullscreen.
 Note that we must include prefixes for different browsers, as they don't support the requestFullscreen property yet */
-      function openFullscreen() {
-        if (document.body.requestFullscreen) {
-          document.body.requestFullscreen();
-        } else if (document.body.webkitRequestFullscreen) {
-          /* Safari */
-          document.body.webkitRequestFullscreen();
-        } else if (document.body.msRequestFullscreen) {
-          /* IE11 */
-          document.body.msRequestFullscreen();
+      function toggleFullscreen() {
+        if (
+          !document.fullscreenElement &&
+          !document.webkitFullscreenElement &&
+          !document.msFullscreenElement
+        ) {
+          // Enter fullscreen mode
+          const requestFullscreen =
+            document.body.requestFullscreen ||
+            document.body.webkitRequestFullscreen ||
+            document.body.msRequestFullscreen;
+
+          if (requestFullscreen) {
+            requestFullscreen.call(document.body);
+          }
+        } else {
+          // Exit fullscreen mode
+          const exitFullscreen =
+            document.exitFullscreen ||
+            document.webkitExitFullscreen ||
+            document.msExitFullscreen;
+
+          if (exitFullscreen) {
+            exitFullscreen.call(document);
+          }
         }
       }
-      openFullscreen();
     </script>
   </body>
 </html>
