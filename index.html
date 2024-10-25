@@ -1414,5 +1414,23 @@
         <a-entity environment="preset: default"></a-entity>
       </a-scene>
     </div>
+    <script>
+      var mindarScene = document.getElementById("mindar-scene");
+
+      /* When the openFullscreen() function is executed, open the video in fullscreen.
+Note that we must include prefixes for different browsers, as they don't support the requestFullscreen property yet */
+      function openFullscreen() {
+        if (mindarScene.requestFullscreen) {
+          mindarScene.requestFullscreen();
+        } else if (mindarScene.webkitRequestFullscreen) {
+          /* Safari */
+          mindarScene.webkitRequestFullscreen();
+        } else if (mindarScene.msRequestFullscreen) {
+          /* IE11 */
+          mindarScene.msRequestFullscreen();
+        }
+      }
+      openFullscreen();
+    </script>
   </body>
 </html>
