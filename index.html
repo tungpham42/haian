@@ -1414,9 +1414,8 @@
         <a-entity environment="preset: default"></a-entity>
       </a-scene>
     </div>
-    <button onclick="toggleFullscreen()">Toggle Fullscreen</button>
     <script>
-      function toggleFullscreen() {
+      function goFullscreen() {
         const element = document.getElementById("haianContainer");
 
         if (!document.fullscreenElement) {
@@ -1431,6 +1430,7 @@
           document.exitFullscreen();
         }
       }
+      goFullscreen();
     </script>
   </body>
 </html>
